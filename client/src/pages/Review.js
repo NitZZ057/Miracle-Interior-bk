@@ -33,33 +33,44 @@ const Review = () => {
 
 
     return (
-        <Layout>
-            <div className="review-container">
-                {/* <form className='review-form' action="" onSubmit={submitReview}> */}
-                <div className="review">
-                    <h1>Give Review</h1>
-                    <p>Rating</p>
-                    <form action="" className="review-form" onSubmit={submitReview}>
-                        <div className="rate">
-                            <Rate allowHalf onChange={(e) => setValue(e)} defaultValue={value} />
-                            {value ? <span className="ant-rate-text">{value} stars</span> : ''}
-                        </div>
-                        <div className="feed-back">
-                            <textarea className='feed-text' name="" id="" cols="30" rows="4" placeholder="Write your review here" onChange={(e) => setFeedBack(e.target.value)}></textarea>
+      <Layout>
+        <div className="review-container">
+          <div className="review">
+            <h1>Give Review</h1>
+            <p>Rating</p>
+            <form action="" className="review-form" onSubmit={submitReview}>
+              <div className="rate">
+                <Rate
+                  allowHalf
+                  onChange={(e) => setValue(e)}
+                  defaultValue={value}
+                />
+                {value ? (
+                  <span className="ant-rate-text">{value} stars</span>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="feed-back">
+                <textarea
+                  className="feed-text"
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="4"
+                  placeholder="Write your review here"
+                  onChange={(e) => setFeedBack(e.target.value)}
+                ></textarea>
+              </div>
 
-                        </div>
-
-                        <div >
-                            <button className="review-btn" >Submit</button>
-                        </div>
-                    </form>
-
-
-                </div>
-                {/* </form> */}
-            </div>
-        </Layout>
-    )
+              <div>
+                <button className="review-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </Layout>
+    );
 }
 
 export default Review
